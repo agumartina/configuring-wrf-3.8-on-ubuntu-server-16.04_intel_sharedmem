@@ -2,7 +2,7 @@
 
 THIS IS A FORK OF https://github.com/camposdelano/configuring-wrf-3.8-on-ubuntu-server-16.04.git ALL CREDITS FOR THEM
 
-WE JUST MODIFY A FEW STEP TO MAKE IT FUN ON A INTEL I7, WITH SHARED MEMORY (OpenMP)
+WE JUST MODIFY A FEW STEP TO MAKE IT WORK ON A INTEL I7, WITH SHARED MEMORY (OpenMP)
 
 These are some installation notes taken in the process of installing WRF version 3.8 on a computer with Ubuntu Server 16.04 LTS.
 
