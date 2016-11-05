@@ -298,17 +298,6 @@ export JASPERINC=$DIR/grib2/include
 $ source ~/.bashrc
 $ ./configure
 ```
-An then, edit file arch/Config_new.pl. Around line 234 the Perl, you must change FALSE for TRUE (thanks to http://www.enviroware.com/installing-and-running-wrf-3-8-on-linux-ubuntu-lts-16-04-with-intel-i7-8-core-cpu/):
-
-```console
-# The jasper library is required to build Grib2 I/O.  User must set
-# environment variables JASPERLIB and JASPERINC to paths to library and
-# include files to enable this feature prior to running configure.
-
- $I_really_want_to_output_grib2_from_WRF = "TRUE" ;
-
- if ( $ENV{JASPERLIB} && $ENV{JASPERINC} && $I_really_want_to_output_grib2_from_WRF eq "TRUE" )
-```
 
 Also, if you are runnin over an Intel machine, you should add
 
@@ -442,6 +431,17 @@ export JASPERINC=$DIR/grib2/include
 
 $ source ~/.bashrc
 $ ./configure
+```
+An then, edit file arch/Config_new.pl. Around line 234 the Perl, you must change FALSE for TRUE (thanks to http://www.enviroware.com/installing-and-running-wrf-3-8-on-linux-ubuntu-lts-16-04-with-intel-i7-8-core-cpu/):
+
+```console
+# The jasper library is required to build Grib2 I/O.  User must set
+# environment variables JASPERLIB and JASPERINC to paths to library and
+# include files to enable this feature prior to running configure.
+
+ $I_really_want_to_output_grib2_from_WRF = "TRUE" ;
+
+ if ( $ENV{JASPERLIB} && $ENV{JASPERINC} && $I_really_want_to_output_grib2_from_WRF eq "TRUE" )
 ```
 
 You should be given a list of various options for compiler types, whether to compile in serial or parallel, and whether to compile ungrib with GRIB2 capability. Unless you plan to create extremely large domains, it is recommended to compile WPS in serial mode, regardless of whether you compiled WRFV3 in parallel. It is also recommended that you choose a GRIB2 option (make sure you do not choose one that states "NO_GRIB2"). You may choose a non-grib2 option, but most data is now in grib2 format, so it is best to choose this option. You can still run grib1 data when you have built with grib2.
